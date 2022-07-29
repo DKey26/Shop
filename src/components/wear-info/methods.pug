@@ -1,0 +1,114 @@
+-
+  function getKeyName(obj, value) {
+    let match = Object.keys(obj).filter((key) => obj[key] == value)
+
+    if (!match.length) {
+      return undefined
+    }
+
+    return match[0]
+  }
+
+  function getEdgePrices(wearType) {
+    if (!WEAR_INFO[wearType].length) {
+      return undefined
+    }
+
+    if (!WEAR_INFO[wearType][0].prices) {
+      return undefined
+    }
+
+    let firstKey = Object.keys(WEAR_INFO[wearType][0].prices)[0]
+
+    let minPrice = WEAR_INFO[wearType][0].prices[firstKey]
+    let maxPrice = WEAR_INFO[wearType][0].prices[firstKey]
+
+    WEAR_INFO[wearType].forEach((item, index) => {
+      item.sizes.forEach((size, secondIndex) => {
+        if (item.prices[size] < minPrice) {
+          minPrice = item.prices[size]
+        }
+
+        if (item.prices[size] > maxPrice) {
+          maxPrice = item.prices[size]
+        }
+      })
+    })
+
+    return {
+      min: minPrice,
+      max: maxPrice,
+    }
+  }
+
+  function getSeparatedSizes(startKey, endKey) {
+    let result = startKey !== endKey
+                  ? `${getKeyName(WEAR_SIZES, startKey)}-${getKeyName(WEAR_SIZES, endKey)}`
+                  : getKeyName(WEAR_SIZES, startKey);
+    return result;
+  }
+
+  function getSequencedPrices(wearItem) {
+    let result = []
+
+    let sortedSizes = wearItem.sizes.sort()
+
+    if(wearItem.type == WEAR_TYPES.HATS || wearItem.type == WEAR_TYPES.STICKERS) {
+      return [
+        {
+          title: '',
+          price: wearItem.prices.default
+        }
+      ]
+    }
+
+    let startKey = sortedSizes[0]
+    let endKey = sortedSizes[0]
+    let oldPrice = wearItem.prices[sortedSizes[0]]
+
+    sortedSizes.forEach((sizeKey) => {
+      let price = wearItem.prices[sizeKey]
+
+      if (price !== oldPrice) {
+
+        result.push({
+          title: getSeparatedSizes(startKey, endKey),
+          price: oldPrice,
+        })
+
+        startKey = sizeKey
+        endKey = sizeKey
+        oldPrice = price
+      } else {
+        endKey = sizeKey
+      }
+    })
+
+    result.push({
+      title: getSeparatedSizes(startKey, endKey),
+      price: oldPrice,
+    })
+
+    return result
+  }
+
+  var getWearTypesList = function() {
+    let result = [];
+
+    Object.keys(WEAR_TYPES).forEach((key, index) => {
+      result.push(WEAR_TYPES[key]);
+    })
+
+    return result;
+  }
+  
+  function formatPrice(price) {
+    return '$'+Number(price).toFixed(2);
+  }
+
+  function formatWeight(weight) {
+    return `${Number(weight).toFixed(1)} oz`;
+  }
+
+mixin methods()
+  block

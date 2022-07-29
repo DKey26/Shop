@@ -1,0 +1,71 @@
+mixin description-item-wrapper()
+  +b.description-item-wrapper
+    if block
+      block 
+
+mixin description-item(item)
+  -
+    var prices = getSequencedPrices(item)
+
+    var sortedSizes = item.sizes.sort();
+    var sizeFirst = sortedSizes[0];
+    var sizeLast = sortedSizes[sortedSizes.length - 1];
+
+    var sizeNameFirst = getKeyName(WEAR_SIZES, sizeFirst)
+    var sizeNameLast = getKeyName(WEAR_SIZES, sizeLast)
+
+  +b.ARTICLE.description-item(data-brand=item.brand)
+    +e.H3.title= item.title
+    +e.P.subtitle= item.subtitle
+
+    +e.description
+      +e.col
+        if item.type == WEAR_TYPES.STICKERS
+          +e.property-item
+            +e.P.property-title Sizes:
+            +e.P.property-text= item.sizes 
+
+        if item.material
+          +e.property-item
+            +e.P.property-title Material:
+            +e.P.property-text= item.material
+
+          +e.hidden-wrap
+            +e.property-item
+              +e.P.property-title Sizes:
+              +e.P.property-text= item.sizes.length > 1 ? `${sizeNameFirst} - ${sizeNameLast}` : 'One Size'
+
+            +e.property-item
+              +e.P.property-title Weight:
+              +e.P.property-text 4.5 oz
+
+            +e.property-item
+              +e.P.property-title Colors:
+              +e.P.property-text 7
+
+        +e.property-item
+          +e.P.property-title Description:
+          +e.P.property-text= item.description
+
+        +e.property-item
+          +e.P.property-title Price:
+          +e.P.property-text 
+            each price in prices
+              | #{price.title} 
+              strong #{formatPrice(price.price)}; 
+      
+      +e.col
+        if item.type != WEAR_TYPES.STICKERS
+          +e.property-item
+            +e.P.property-title Sizes:
+            +e.P.property-text= item.sizes.length > 1 ? `${sizeNameFirst} - ${sizeNameLast}` : 'One Size'
+
+        if item.weight
+          +e.property-item
+            +e.P.property-title Weight:
+            +e.P.property-text= formatWeight(item.weight)
+
+        if item.colors
+          +e.property-item
+            +e.P.property-title Colors:
+            +e.P.property-text= item.colors

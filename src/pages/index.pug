@@ -1,0 +1,131 @@
+extends ../components/layout/index
+include ../components/title/index
+include ../components/card/index
+include ../components/sprite/index
+include ../components/button/index
+include ../components/brand-slider/index
+include ../components/contact-form/index
+
+block variables
+  - var pageClass = '';
+  - var pageTitle = "Merch Connect";
+  - var pageDescription = ""
+  - var pageName = "index"
+
+block content
+  +b.SECTION.preview
+    .container
+      +e.wrapper
+        +e.H1.title
+          span.line We don’t just  
+            span.blue customize
+          span.line We deliver  
+            span.blue messages
+
+        +button('a', 'Place an order')(href="https://docs.google.com/forms/d/10zGNTkzW7gCUKqedhij1GEhtSIjw-Pe_6Sg0HvKWLJk/viewform?edit_requested=true", target="_blank")
+
+    +e.image-wrap
+      +e.SPAN.border-block
+        img(src="/images/t-shirt-design-1.png", alt="T-Shirt with print")
+        +e.video-wrap
+          video(src="/animated/t-shirt.mp4", alt="T-Shirt with print", autoplay, muted, loop)
+
+      +e.SPAN.vertical-icons-block
+        +e.SPAN.icon
+          +sprite('blob')
+        +e.SPAN.icon
+          +sprite('blob')
+        +e.SPAN.icon
+          +sprite('blob')
+
+  +b.SECTION.benefits
+    .container
+      +e.wrap
+        +e.item
+          +e.H3.title Maximize Quality
+          +e.P.description Father time has done wonders for technological advancements. We carry arguably one of the most state of the art DTG printing equipment the world has to offer at the moment. This means better prints, at better prices.
+
+        +e.item
+          +e.H3.title Maximize Your Profits
+          +e.P.description We have direct partnerships with the biggest blank wholesale providers in the world. No third parties, no extra cheese taken off top, no middlemen taking away from your pockets.
+
+        +e.item
+          +e.H3.title Maximize Your Money
+          +e.P.description Most manufacturers are just that, manufacturers. We pride in coming from selling our own line of custom clothes as well. This means, you get the same standards of quality we have for own internal stuff when you do business with us.
+
+  +b.SECTION.offers
+    .container
+      +title('h2', 'What we offer', 'Our direct partnerships with the manfacturers mean more affordable pricing for us. Better pricing for us, means better pricing for you..', 'centered')
+      +card-wrapper()
+        each item in WEAR_TYPES_INFO
+          +card(item)
+      +e.SPAN.description.before-mobile
+        span.star *
+        | This product will be embroidered. Pricing may vary so please <a href="/contact-us">contact us</a> directly regarding these orders!
+
+  +b.SECTION.process
+    .container
+      +title('h3', 'How it works?', 'Our process is simple. Get started today so your ideas can become a reality tomorrow.', ['centered', 'blue'])
+
+      +b.OL.process-list
+        +e.LI.item
+          +sprite('underline-1')
+          +e.H4.title Imagine your idea
+          +e.P.description Clicking the “Place an order” button will lead you to the page that will allow you to give us the information we need.
+
+        +e.LI.item
+          +sprite('underline-2')
+          +e.H4.title Share your idea
+          +e.P.description The same form will ask you specific questions to help us get a better visual of what you want. Please be as descriptive as possible.
+
+        +e.LI.item
+          +sprite('underline-1')
+          +e.H4.title Approve your idea
+          +e.P.description Once the form is completed, we will send a mockup and proof for your approval before any work is completed.
+
+        +e.LI.item
+          +sprite('underline-3')
+          +e.H4.title Idea comes to life
+          +e.P.description Expect your shipment at your front door with quick turnaround times to express your idea to the rest of the world.
+
+      +button('a', 'Place an order')(href="https://docs.google.com/forms/d/10zGNTkzW7gCUKqedhij1GEhtSIjw-Pe_6Sg0HvKWLJk/viewform?edit_requested=true", target="_blank")
+
+  +b.SECTION.about-section
+    .container
+      +title('h4', 'Learn more about MERCHCONNECT', 'We are here for you, the customer. Click to learn a bit more about our processes and story.')
+
+      +button('a', 'about us')(href="/about-us")
+
+    +e.images
+      span
+      img(src="/images/person.png", alt="Person")
+
+  +brand-slider()
+
+  +b.SECTION.reviews.reviews-slider
+    .container
+      +title('h4', 'Our customers say', '', 'centered')
+      .swiper-container
+        +e.wrap.swiper-wrapper
+          +e.item.swiper-slide
+            +e.P.message Needed some hoodies for the Bitcoin event in Miami. Edwin and his team made the process so simple. Hoodies were also fire!
+            +e.P.user - Anthony Yoon
+              span FTX Exchange
+            +e.icon
+              +sprite('fix')
+
+          +e.item.swiper-slide
+            +e.P.message We’ve worked with a number of different vendors over time and Merchconnect has definitley become one of our main go to guys through the quality and pricing
+            +e.P.user - Sarah
+              span Line Friends
+            +e.icon
+              img(src="/images/line-friends.png", alt="Line Friends logo")
+
+          +e.item.swiper-slide
+            +e.P.message Quick turnarounds and the shirts themselves were how we expected
+            +e.P.user - Thomas Fields
+              span Grind Basketball
+            +e.icon
+              img(src="/images/grind.png", alt="Grind logo")
+
+  +contact-form()

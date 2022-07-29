@@ -1,0 +1,10 @@
+mixin accordion(questions)
+  +b.UL.accordion
+    each question in questions
+      +e.LI.item
+        input(type="checkbox", checked)
+        i
+        +e.H2.title= question.title
+        each text in question.texts
+          p= text
+        

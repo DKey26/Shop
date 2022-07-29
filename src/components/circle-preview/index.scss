@@ -1,0 +1,40 @@
+.preview {
+  height: 357px;
+  overflow: hidden;
+
+  .container {
+    height: 100%;
+    justify-content: center;
+  }
+
+  &__background {
+    position: absolute;
+    width: 800vw;
+    height: 800vw;
+    border-radius: 50%;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background-color: $color-astral;
+    overflow: hidden;
+
+    &:before {
+    content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-image: url('~/assets/images/bg-circles.png');
+      background-position: bottom center;
+      background-repeat: repeat;
+      mix-blend-mode: screen;
+      opacity: 0.6;
+    }
+  }
+
+  .title-block {
+    color: $color-white;
+    text-align: center;
+  }
+}

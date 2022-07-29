@@ -1,0 +1,50 @@
+.contact-form {
+  background: $color-wild-sand;
+
+  .container {
+    align-items: center;
+  }
+
+  .title-block {
+    margin-bottom: 50px;
+    max-width: 1126px;
+    text-align: left;
+
+    &__subtitle {
+      letter-spacing: 0.2px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 20px);
+    margin: 0 -10px;
+  }
+
+  .button {
+    width: calc(25% - 20px);
+    margin: 0 10px;
+    height: 58px;
+    font-weight: 700;
+  }
+
+  .input-row {
+    width: calc(25% - 20px);
+    margin: 0 10px;
+  }
+
+  @media only screen and (max-width: 992px) {
+    .title-block {
+      text-align: center;
+    }
+    
+    &__wrap {
+      flex-direction: column;
+      &>* {
+        width: calc(100% - 20px) !important;
+        margin-bottom: 15px !important;
+      }
+    }
+  }
+}

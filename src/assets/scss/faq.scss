@@ -1,0 +1,23 @@
+@import "~/_base/scss/main";
+
+@import "./components.scss";
+
+@import "../../components/circle-preview";
+
+.questions {
+  .container {
+    align-items: center;
+  }
+
+  &__text {
+    max-width: 960px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 68px;
+    text-align: center;
+  }
+
+  .accordion {
+    max-width: 886px;
+  }
+}

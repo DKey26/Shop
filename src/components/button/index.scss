@@ -1,0 +1,88 @@
+$default-button-height: 63px;
+$default-button-height-without-borders: 61px;
+$button-font-size: rem(18px);
+
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  height: $default-button-height;
+  font-size: $button-font-size;
+  border: 1px solid transparent;
+  color: $color-white;
+  background-color: $color-astral;
+  display: inline-flex;
+  vertical-align: center;
+  text-decoration: none;
+  border-radius: 1px; 
+  outline: none;
+  text-transform: uppercase;
+  user-select: none;
+  transition: all $anim-speed $anim;
+  font-weight: 700;
+  font-family: $main-font;
+
+  &:visited {
+    color: $color-white;
+  }
+
+  &[disabled] {
+      background: $color-gray;
+      border-color: transparent;
+      color: $color-white;
+      height: $default-button-height;
+      cursor: not-allowed;
+      opacity: 0.5;
+
+      &:hover, &:focus {
+        background: $color-gray;
+        border-color: transparent;
+        text-decoration: none;
+      }
+  }
+
+  &:hover, &:focus {
+    background: $color-steel-blue;
+    color: $color-white;
+    text-decoration: underline;
+  }
+
+  &--bordered {
+    background: $color-white;
+    border-color: $color-astral;
+    color: $color-astral;
+    height: $default-button-height-without-borders;
+
+    &:hover, &:focus {
+      border-color: $color-steel-blue;
+    }
+
+    &[disabled] {
+      background-color: $color-white;
+      border-color: $color-gray;
+      color: $color-gray;
+
+      &:hover {
+        background-color: $color-white;
+        border-color: $color-gray;
+        color: $color-gray;
+      }
+    }
+  }
+
+  &--loading {
+    cursor: progress;
+    background: $color-regent-blue;
+    border-color: transparent;
+    height: $default-button-height;
+    color: $color-white;
+
+    &:hover, &:focus {
+      background: $color-regent-blue;
+      border-color: transparent;
+      text-decoration: none;
+    }
+  }
+}

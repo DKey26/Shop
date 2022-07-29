@@ -1,0 +1,12 @@
+{
+  "index": "index.ts",
+  "about-us": "about-us.ts",
+  "contact-us": "contact-us.ts",
+  "faq": "faq.ts",
+  "free-shirt": "free-shirt.ts",
+  "print-on-demand": "print-on-demand.ts",
+  "privacy-policy": "privacy-policy.ts",
+  "products": "products.ts",
+  "terms-and-conditions": "terms-and-conditions.ts",
+  "ui-page": "ui-page.ts"
+}

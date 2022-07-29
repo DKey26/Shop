@@ -1,0 +1,19 @@
+mixin title(element = 'h1', title, subtitle = '', type = 'default')
+  -
+    var types = {
+      default: '',
+      centered: '--centered',
+      blue: '--blue'
+    }
+
+    function getModifiers(type) {
+      if(!Array.isArray(type)) {
+        return types[type];
+      }
+
+      return type.map((item) => types[item]).join(' ');
+    }
+  +b.title-block(class=getModifiers(type))
+    +e(element).title #{title}
+    if subtitle
+      +e.P.subtitle #{subtitle}

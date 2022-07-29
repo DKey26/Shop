@@ -1,0 +1,40 @@
+.title-block {
+  $parent: &;
+
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 50px;
+    line-height: 75px;
+    font-weight: 900;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 20px;
+  }
+
+  &--centered {
+    align-items: center;
+    text-align: center;
+  }
+
+  &--blue {
+    #{$parent}__title {
+      color: $color-matisse;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    &__title {
+      font-size: 30px;
+      line-height: 37px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+    }
+  }
+}

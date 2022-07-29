@@ -1,0 +1,335 @@
+.header {
+  border-bottom: 1px solid $color-astral;
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 69px;
+
+    &>* {
+      margin: 0 10px;
+    }
+  }
+
+  &__logo {
+    position: relative;
+
+    img, svg {
+      user-select: none;
+      width: 210px;
+      height: 23px;
+      max-width: 100%;
+    }
+  }
+
+  &__copy-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 30px;
+    font-size: 32px;
+    white-space: nowrap;
+    color: transparent;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+
+  &__information {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 16px;
+    padding-top: 12px;
+    margin-right: -5px;
+  }
+
+  &__tel {
+    color: $color-mine-shaft;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      fill: $color-mine-shaft;
+    }
+
+    &:hover {
+      color: $color-astral;
+    }
+  }
+
+  &__separator {
+    font-weight: 700;
+    padding: 0 6px;
+  }
+
+  &__search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  &__mobile-menu-button {
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    width: 18px;
+    height: 16px;
+    cursor: pointer;
+
+    span {
+      position: relative;
+      width: 14px;
+      height: 2px;
+      border-radius: 2px;
+      background: $color-mine-shaft;
+      transition: all .3s ease;
+
+      &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: calc(100% + 5px);
+        width: 18px;
+        height: 2px;
+        border-radius: 2px;
+        background: $color-mine-shaft;
+        transition: all .3s ease;
+        
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: calc(100% + 5px);
+        width: 18px;
+        height: 2px;
+        border-radius: 2px;
+        background: $color-mine-shaft;
+        transition: all .3s ease;
+      }
+    }
+
+    &.active {
+      span {
+        background: transparent;
+        transform: translateX(10px);
+
+        &:before {
+          transform: rotate(45deg) translate(0px, 10px);
+        }
+
+        &:after {
+          transform: rotate(-45deg) translate(0px, -10px);
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1367px) {
+    .main-navigation {
+      margin-left: 10px;
+
+      &__item {
+        a {
+          padding: 13px 15px 0;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .main-navigation {
+      &__item {
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    position: relative;
+    
+    &__mobile-menu-button {
+      position: relative;
+      display: flex;
+      z-index: 31;
+    }
+
+    .main-navigation {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 100vh !important;
+      margin: 0;
+      z-index: 30;
+      background: $color-white;
+      height: initial;
+      padding-top: 69px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      &__list {
+        flex-direction: column;
+        box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.15);
+        padding: 30px 20px 0;
+        height: initial;
+        margin-bottom: 43px;
+      }
+
+      &__socials {
+        display: flex !important;
+        justify-content: center;
+        a {
+          padding: 0 !important;
+        }
+
+        li {
+          border: none;
+          margin: 0 13px;
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+
+      &__item {
+        border-bottom: 1px solid $color-mercury-light;
+        height: initial;
+        &:before, &:after {
+          display: none;
+        }
+        a {
+          padding: 18px 0;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+
+      .on-mobile {
+        display: block;
+      }
+    }
+
+    &__tel{
+      display: none;
+    }
+
+    &__logo {
+      z-index: 31;
+    }
+  }
+
+  &.opened-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    .main-navigation {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+}
+
+.main-navigation {
+  height: 100%;
+  margin-left: -22px;
+
+  &__list {
+    display: flex;
+    height: 100%;
+  }
+
+  &__item {
+    height: 100%;
+    border-left: 1px solid transparent;
+    position: relative;
+
+    &:last-child {
+      border-right: 1px solid transparent;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 1px;
+      height: calc(50% + 9px);
+      background: $color-astral;
+    }
+
+    &:last-child {
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        height: calc(50% + 9px);
+        background: $color-astral;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      height: 100%;
+      padding: 13px 30px 0;
+      color: $color-mine-shaft;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: 18px;
+      letter-spacing: 0px;
+      transition: transform .3s ease, color .3s ease;
+
+      &:hover, &:focus {
+        transform: translateY(2px);
+        color: $color-astral;
+      }
+    }
+
+    &__socials {
+      display: flex;
+      width: calc(100% + 26px);
+      margin: 0 -13px;
+
+      li {
+        border: none;
+      }
+    }
+
+    &.active {
+      a {
+        color: $color-astral;
+      }
+    }
+  }
+
+  .on-mobile {
+    display: none;
+  }
+}

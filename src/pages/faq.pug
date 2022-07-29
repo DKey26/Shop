@@ -1,0 +1,23 @@
+extends ../components/layout/index
+include ../components/contact-form/index
+include ../components/accordion/index
+
+block variables 
+  - var pageClass = '';
+  - var pageTitle = "Merch Connect - FAQ";
+  - var pageDescription = ""
+  - var pageName = "faq"
+
+block content
+  +b.SECTION.preview
+    +e.background
+    .container
+      +b.title-block
+        +e.H1.title Frequently asked questions
+  
+  +b.SECTION.questions
+    .container
+      +e.P.text Let us help you with some information. Below you’ll find a list of question we get asked the most. We try to display all information that describes our business  on this webside, however if you have any questions don’t hesitate to contact us
+      +accordion(questions)
+
+  +contact-form()

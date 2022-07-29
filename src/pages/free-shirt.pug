@@ -1,0 +1,62 @@
+extends ../components/layout/index
+include ../components/contact-form/index
+include ../components/free-shirt-form/index
+include ../components/sprite/index
+
+block variables
+  - var pageClass = '';
+  - var pageTitle = "Merch Connect - free shirt";
+  - var pageDescription = ""
+  - var pageName = "free-shirt"
+
+block content
+  +b.SECTION.preview
+    .container
+      +b.title-block
+        +e.H1.title
+          span Free Shirt Fridays
+        +e.P.subtitle We will be choosing 5 winners to win a FREE shirt every Friday, which will be shipped FREE of cost to their door. There will be no limitation to what design the winner would like on the front side of a white t-shirt!
+        +e.P.subtitle Below are the easy steps to enter the drawing
+
+      +e.image-wrap
+        img.t-shirt-1(src="/images/t-shirt-print.png", alt="T-Shirt with print")
+        img.t-shirt-2(src="/images/t-shirt-without-print.png", alt="T-Shirt without print")
+    +e.background
+      img(src="/images/bg-free-shirt.svg", alt="Free Shirt background")
+
+    +e.bottom-line
+
+  +b.SECTION.sequence
+    .container
+      +e.row
+        +e.col
+          +e.title
+            span 1
+            p Follow our Instagram page and tag 3 Friends on this post below
+          
+          +e.block
+            img(src="/images/free-shirt-image.png", alt="Free shirt image")
+          +e.arrow-right
+            +sprite('arrow-free-right')
+
+          +e.arrow-right-down
+            +sprite('arrow-right-down')
+
+        +e.col
+          +e.title
+            span 2
+            p Fill out the form below
+
+          +free-shirt-form()
+
+          +e.arrow-down
+            +sprite('arrow-free-down')
+
+          +e.arrow-left-down
+            +sprite('arrow-left-down')
+
+          +e.title
+            span 3
+            p If you are chosen, you will be receiving an email from a member of our team. Please have the file for the design you have in mind ready!
+
+  +contact-form()

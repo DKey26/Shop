@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./build/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "esnext",
+    "target": "es2021",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "paths": {
+      "~/*": [
+        "./*"
+      ] 
+    }
+  },
+
+  "include": [
+    "src", "decs.d.ts"
+  ],
+}

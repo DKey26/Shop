@@ -1,0 +1,14 @@
+mixin category-item(item)
+  +b.category-item(id=item.id)
+    +e.H3.title= item.title
+      if item.isDescripted
+        +e.SPAN.star *
+        | !{item.text}
+    +e.wrap
+      +e.side-bar
+        +e.image
+          img(src=`/images/${item.image}`, alt=item.title)
+      if block
+        block
+
+    +e.SPAN.show-btn Show less

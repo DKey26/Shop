@@ -1,0 +1,21 @@
+mixin button(el, text, type='default')
+  -
+    var types = {
+      default: '', 
+      bordered: '--bordered', 
+      loading: '--loading'
+    };
+
+    function getClasses(type) {
+      if(Array.isArray(type)) {
+        const arrayOfTypes = type.map((item) => {
+          return types[item];
+        })
+
+        return arrayOfTypes.join(' ');
+      }
+
+      return types[type]
+    }
+
+  +b({ tag: el })&attributes(attributes).button(class=getClasses(type)) #{text}

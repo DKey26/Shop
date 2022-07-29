@@ -1,0 +1,316 @@
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-ExtraLight.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-ExtraLight.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-ExtraLight.otf') format('opentype');
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-ExtraLightItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-ExtraLightItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-ExtraLightItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-Light.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-Light.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-Light.otf') format('opentype');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-LightItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-LightItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-LightItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-Regular.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-Regular.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-RegularItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-RegularItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-RegularItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-Medium.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-Medium.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-Medium.otf') format('opentype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-MediumItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-MediumItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-MediumItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-SemiBold.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-SemiBold.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-SemiBold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-SemiBoldItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-SemiBoldItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-SemiBoldItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-Bold.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-Bold.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-Bold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-BoldItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-BoldItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-BoldItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-ExtraBold.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-ExtraBold.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-ExtraBold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-ExtraBoldItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-ExtraBoldItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-ExtraBoldItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-Black.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-Black.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-Black.otf') format('opentype');
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('~/assets/fonts/Mulish/Mulish-BlackItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Mulish/Mulish-BlackItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Mulish/Mulish-BlackItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 900;
+}
+
+
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-Thin.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-Thin.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-Thin.otf') format('opentype');
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-ThinItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-ThinItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-ThinItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-ExtraLight.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-ExtraLight.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-ExtraLight.otf') format('opentype');
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-ExtraLightItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-ExtraLightItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-ExtraLightItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-Light.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-Light.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-Light.otf') format('opentype');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-LightItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-LightItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-LightItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-Regular.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-Regular.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-RegularItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-RegularItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-RegularItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-Medium.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-Medium.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-Medium.otf') format('opentype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-MediumItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-MediumItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-MediumItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-SemiBold.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-SemiBold.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-SemiBold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-SemiBoldItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-SemiBoldItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-SemiBoldItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-Bold.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-Bold.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-Bold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-BoldItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-BoldItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-BoldItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-ExtraBold.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-ExtraBold.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-ExtraBold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-ExtraBoldItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-ExtraBoldItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-ExtraBoldItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-Black.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-Black.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-Black.otf') format('opentype');
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('~/assets/fonts/Kanit/Kanit-BlackItalic.woff2') format('woff2'),
+       url('~/assets/fonts/Kanit/Kanit-BlackItalic.ttf') format('truetype'),
+       url('~/assets/fonts/Kanit/Kanit-BlackItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Volkhov';
+  src: url('~/assets/fonts/Volkhov/Volkhov-Regular.woff2') format('woff2'),
+       url('~/assets/fonts/Volkhov/Volkhov-Regular.ttf') format('truetype'),
+       url('~/assets/fonts/Volkhov/Volkhov-Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}

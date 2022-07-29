@@ -1,0 +1,40 @@
+@use "sass:math";
+
+@import "helpers-spacing";
+@import "helpers-classes";
+
+// px to rem
+@function rem($pixels, $context: $size-font) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return math.div($pixels, $context) * 1rem;
+}
+
+// усечение текста @include truncate(100%);
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Вертикальный ритм
+@mixin offsetY($type, $valueTop, $valueBottom:$valueTop) {
+  @if $valueTop !=0 {
+    #{$type}-top: $valueTop;
+    @include md(#{$type}-top, math.div($valueTop, 1.33333333));
+    @include sm(#{$type}-top, $valueTop*0.5);
+  }
+
+  @if $valueBottom !=0 {
+    #{$type}-bottom: $valueBottom;
+    @include md(#{$type}-bottom, math.div($valueBottom, 1.33333333));
+    @include sm(#{$type}-bottom, $valueBottom*0.5);
+  }
+}

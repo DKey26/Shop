@@ -1,0 +1,146 @@
+extends ../components/layout/index
+include ../components/sprite/index
+include ../components/button/index
+include ../components/callback-form/index
+
+block variables
+  - var pageClass = '';
+  - var pageTitle = "Merch Connect - Print on demand";
+  - var pageDescription = ""
+  - var pageName = "print-on-demand"
+
+block content
+  +b.SECTION.preview
+    .container
+      +b.title-block
+        +e.H1.title Print-On-Demand
+          +e.icons
+            +sprite('blob')
+            +sprite('blob')
+            +sprite('blob')
+
+        +e.P.subtitle Increase your profit margin
+
+      +e.image-wrap
+        img(src="/images/hoodie-preview.png", alt="White hoodie")
+
+  +b.SECTION.aqua-block
+    .container
+      +e.wrap
+        +e.text Have your own website and designs already but shopping for better printing solutions?
+          b Well We’re your guys!
+
+  +b.SECTION.what-is
+    .container
+      +b.title-block
+        +e.H2.title What is Print-on-demand?
+
+      +e.wrap
+        +e.col
+          +e.P.text Print on demand (or ‘POD’) is a process where you work with a supplier of white-label products (like t-shirts or hats) to customize those products and sell them on a per-order basis under your own brand and with your own designs.  Once you’ve set everything up, it takes only a few clicks to fulfill an order after you’ve made a sale. Our company will take care of the whole process.
+          +button('a', 'Place an order')(href="https://docs.google.com/forms/d/10zGNTkzW7gCUKqedhij1GEhtSIjw-Pe_6Sg0HvKWLJk/viewform?edit_requested=true", target="_blank")
+        +e.col
+          img(src="/images/pod-design.png", alt="Custom design")
+
+  +b.SECTION.does-it-work
+    .container
+      +b.title-block
+        +e.H2.title How does it work?
+
+    +b.rounded-blocks
+      +e.background
+      +e.item
+        +e.white-block
+          +e.H3.title Create custom products
+          +e.P.subtitle Send us your design and choose the right garment to print
+        span
+
+      +e.item
+        +e.white-block
+          +e.H3.title Sell on your terms
+          +e.P.subtitle Sell your products on a per-order basis under your own brand
+        span
+
+      +e.item
+        +e.white-block
+          +e.H3.title We handle fulfillment
+          +e.P.subtitle We will take care of the whole process
+        span
+
+    +e.P.text Visit our
+      a(href="/products") catalog
+      | to see all merchconnect products you can personalize
+
+  +b.SECTION.callback
+    .container
+      +e.wrap
+        +e.col
+          +b.title-block
+            +e.H4.title We make it possible to start selling custom products in minute
+          +b.typography
+            p As we are working on an automated system for this, we ask that you reach out to us direct to help you get set up.
+            p Our design workflow is optimized for efficiency and accuracy on every order.
+
+        +e.col
+          +callback-form()
+
+  +b.SECTION.reviews-slider.default-swiper
+    .container
+      .swiper-container.container
+        +e.row.swiper-wrapper
+          +e.item.swiper-slide
+            +e.P.text Needed some shirts done for my girlie’s bachelorette party. MERCHCONNECT was very easy to work with to get our deisgns right (we put a picture of the bride to be on some shirts). They also got it to us on a very quick turn around!
+            +e.bottom
+              +e.P.author - Jackie Alaretta
+              +b.UL.rating
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                  +e.SPAN.counter 5
+
+          +e.item.swiper-slide
+            +e.P.text Went from Printful to these guys based off a colleague’s suggestion. My business is loving that decision!
+            +e.bottom
+              +e.P.author - Lauren Goldenfield
+              +b.UL.rating
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                  +e.SPAN.counter 5
+
+          +e.item.swiper-slide
+            +e.P.text As someone who sells custom t-shirts for a side business, I’ve gone through a good amount of the “bigger” guys and MERCHCONNECT has done best by me for both pricing and quality
+            +e.bottom  
+              +e.P.author - Jeanette Yang
+              +b.UL.rating
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                +e.LI.item
+                  +sprite('star')
+                  +e.SPAN.counter 5
+
+        .swiper-pagination
+        .swiper-button-prev
+          +sprite('tiny-arrow')
+        .swiper-button-next
+          +sprite('tiny-arrow')

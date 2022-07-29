@@ -1,0 +1,189 @@
+extends ../components/layout/index
+include ../components/contact-form/index
+include ../components/sprite/index
+include ../components/brand-slider/index
+include ../components/button/index
+
+block variables
+  - var pageClass = '';
+  - var pageTitle = "Merch Connect - About Us";
+  - var pageDescription = ""
+  - var pageName = "about-us"
+
+block content
+  +b.SECTION.preview
+    .container
+      +b.title-block
+        +e.H1.title About MERCHCONNECT
+        +e.P.subtitle It’s tough finding the right vendor to work with. We understand, This was not just a business idea to provide custom printing for others. It came from our own demand of finding the right printer for our older sister ecommerce business that also provided prints for their customers.
+    +e.bottom-line
+
+  +b.SECTION.behind
+    .container
+      +b.title-block
+        +e.H2.title Behind our company
+
+      +b.UL.experience
+        +e.LI.item
+          +e.P.counter 422,000+
+          +e.P.title Inhouse orders
+          +e.P.description We transfer our standard of quality for our inhouse orders to your orders
+
+        +e.LI.item
+          +e.P.counter 11
+          +e.P.title Years of Experience
+          +e.P.description We’re not just a manufacturer. We’re a manufacturer that understands the mind of a client
+
+        +e.LI.item
+          +e.P.counter 142,000+
+          +e.P.title Client Prints
+          +e.P.description Making sure our customers get the best prints at the best buck
+
+  +b.SECTION.previous-clients
+    .container
+      +b.title-block
+        +e.H2.title Some previous clients
+        +e.P.subtitle Doesn’t matter what line of business you are in or the purpose of the custom prints you may need. Chances are, we’ve serviced a customer just like you before.
+          span Some honorable mentions
+    +b.clients-wrapper
+      +b.clients
+        +e.item
+          +e.title-block
+            span grind basketball
+          +e.image-wrap
+            img(src="/images/grind-clothing.png", alt="Grind's T-Shirt")
+
+        +e.item(class="--vertical")
+          +e.title-block
+            span coldest water
+          +e.image-wrap
+            img(src="/images/coldest-clothing.png", alt="Coldest's Hoodie")
+
+        +e.item(class="--reverse")
+          +e.title-block
+            span BTS + LINE FRIENDS COLLAB
+          +e.image-wrap
+            img(src="/images/bts-line-friends-clothing.png", alt="BTS's & Line friend's T-Shirt")
+
+        +e.item(class="--reverse")
+          +e.title-block
+            span FTX
+          +e.image-wrap
+            img(src="/images/ftx-sleeve-clothing.png", alt="FTX's Long sleeve")
+
+        +e.item
+          +e.title-block
+            span FTX
+          +e.image-wrap
+            img(src="/images/ftx-hoodie-clothing.png", alt="FTX's Hoodie")
+
+  +b.SECTION.timeline-section
+    .container
+      +b.title-block
+        +e.H2.title Our timeline
+
+    +e.top-line
+      span THE THOROUGH YET QUICK PROCESS
+      +e.decoration
+        +sprite('blob')
+        +sprite('blob')
+        +sprite('blob')
+
+    +b.timeline-block
+      +e.wrap
+        +e.UL.list
+          +e.LI.item(class="--color-1")
+            +e.SPAN.time 9:00AM
+            +e.SPAN.description Customer clicks “place an order” anywhere on our website
+
+          +e.LI.item(class="--color-2")
+            +e.SPAN.time 9:01AM
+            +e.SPAN.description Customer details and uploads design along with choice of garment and quantity
+
+          +e.LI.item(class="--swop --color-2")
+            +e.SPAN.time 9:01AM
+            +e.SPAN.description Gets automatically routed to us for a mockup
+
+          +e.LI.item(class="--swop --color-3")
+            +e.SPAN.time 10:01AM
+            +e.SPAN.description Customer gets sent a mockup for approval
+
+          +e.LI.item(class="--color-4")
+            +e.SPAN.time 10:02AM
+            +e.SPAN.description Customer approves or requests edits for printing
+
+          +e.LI.item(class="--swop --color-5")
+            +e.SPAN.time 10:05AM
+            +e.SPAN.description Once approved, designated order’s blanks get picked by our team to get ready for production
+
+          +e.LI.item(class="--swop --color-6")
+            +e.SPAN.time 10:07AM
+            +e.SPAN.description Order goes through printing
+
+          +e.LI.item(class="--color-7")
+            +e.SPAN.time 10:30AM
+            +e.SPAN.description All prints goes through quality assurance
+
+          +e.LI.item(class="--swop --color-8")
+            +e.SPAN.time 10:40AM
+            +e.SPAN.description Order gets packaged and ready to go out
+
+    +button('a', 'Get in touch')(href="https://docs.google.com/forms/d/10zGNTkzW7gCUKqedhij1GEhtSIjw-Pe_6Sg0HvKWLJk/viewform?edit_requested=true", target="_blank")
+
+
+    +b.timeline-block
+
+  +brand-slider()
+
+  +b.SECTION.reviews.reviews-slider
+    .container
+      +title('h4', 'Our customers say', '', 'centered')
+      .swiper-container
+        +e.wrap.swiper-wrapper
+          +e.item.swiper-slide
+            +e.P.message Needed some hoodies for the Bitcoin event in Miami. Edwin and his team made the process so simple. Hoodies were also fire!
+            +e.P.user - Anthony Yoon
+              span FTX Exchange
+            +e.icon
+              +sprite('fix')
+
+          +e.item.swiper-slide
+            +e.P.message We’ve worked with a number of different vendors over time and Merchconnect has definitley become one of our main go to guys through the quality and pricing
+            +e.P.user - Sarah
+              span Line Friends
+            +e.icon
+              img(src="/images/line-friends.png", alt="Line Friends logo")
+
+          +e.item.swiper-slide
+            +e.P.message Quick turnarounds and the shirts themselves were how we expected
+            +e.P.user - Thomas Fields
+              span Grind Basketball
+            +e.icon
+              img(src="/images/grind.png", alt="Grind logo")
+
+  //- +b.SECTION.reviews
+  //-   .container
+  //-     +title('h4', 'Our customers say', '', 'centered')
+  //-     +e.wrap
+  //-       +e.item
+  //-         +e.P.message Needed some hoodies for the Bitcoin event in Miami. Edwin and his team made the process so simple. Hoodies were also fire!
+  //-         +e.P.user - Anthony Yoon
+  //-           span FTX Exchange
+  //-         +e.icon
+  //-           +sprite('fix')
+
+  //-       +e.item
+  //-         +e.P.message We’ve worked with a number of different vendors over time and Merchconnect has definitley become one of our main go to guys through the quality and pricing
+  //-         +e.P.user - Sarah
+  //-           span Line Friends
+  //-         +e.icon
+  //-           img(src="/images/line-friends.png", alt="Line Friends logo")
+
+  //-       +e.item
+  //-         +e.P.message Quick turnarounds and the shirts themselves were how we expected
+  //-         +e.P.user - Thomas Fields
+  //-           span Grind Basketball
+  //-         +e.icon
+  //-           img(src="/images/grind.png", alt="Grind logo")
+
+  +contact-form()

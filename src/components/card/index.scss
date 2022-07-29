@@ -1,0 +1,184 @@
+@mixin hover-blocks($posY) {
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    #{$posY}: 0;
+    width: 50%;
+    height: 125px;
+    background: $color-black;
+    border-radius: 1px;
+    opacity: 0.25;
+    transform-origin: $posY left;
+    transform: scale(0);
+    transition: all .3s ease;
+    z-index: 1;
+  }
+  
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    #{$posY}: 0;
+    width: 50%;
+    height: 125px;
+    background: $color-black;
+    border-radius: 1px;
+    opacity: 0.25;
+    transform-origin: $posY right;
+    transform: scale(0);
+    transition: all .3s ease;
+    z-index: 1;
+  }
+}
+
+@mixin activate-hover-blocks {
+  &:before, &:after {
+    transform: scale(1);
+  }
+}
+
+@mixin description-pseudo($posY) {
+  content: "";
+  position: absolute;
+  #{$posY}: -10px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  background: transparent;
+  height: 4px;
+  width: calc(100% + 50px);
+  border: 1px solid $color-white;
+  border-left: none;
+  border-right: none;
+  visibility: visible;
+  transition: all .3s ease .4s;
+}
+
+@mixin activate-description-pseudo {
+  &:before, &:after {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+  margin-bottom: -80px;
+  width: calc(100% + 40px);
+
+  &>* {
+    margin: 0 20px;
+    margin-bottom: 80px;
+    width: calc(25% - 40px);
+  }
+
+  &__mobile-description {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+}
+
+.card {
+  $parent: &;
+
+  cursor: pointer;
+  position: relative;
+  max-width: 290px;
+  overflow: hidden;
+  color: $color-mine-shaft;
+
+  &__view {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+    height: 250px;
+    width: 100%;
+    background: $color-alabaster;
+
+    img {
+      display: block;
+      object-fit: contain;
+      max-width: calc(100% - 40px);
+      width: calc(100% - 40px);
+      max-height: 206px;
+      min-height: 206px;
+    }
+
+    @include hover-blocks(bottom);
+  }
+
+  &__hover-description {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-white;
+    font-size: rem(20px);
+    text-align: center;
+    transition: all .0s;
+    z-index: 2;
+
+    &:before {
+      @include description-pseudo(top);
+    }
+
+    &:after {
+      @include description-pseudo(bottom);
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: rem(18px);
+    line-height: rem(22.59px);
+    margin-top: 22px;
+    color: $color-mine-shaft;
+  }
+
+  &__star {
+    position: relative;
+    top: 3px;
+    font-size: 22px;
+    font-weight: 700;
+    color: $color-astral;
+  }
+
+  &__subtitle {
+    color: $color-dusty-gray;
+    font-weight: 600;
+    font-size: rem(18px);
+    line-height: rem(22.59px);
+    margin-top: 4px;
+  }
+
+  @include hover-blocks(top);
+
+  &:hover {
+    color: $color-mine-shaft;
+
+    @include activate-hover-blocks;
+
+    #{$parent}__view {
+      @include activate-hover-blocks;
+    }
+
+    #{$parent}__hover-description {
+      opacity: 1;
+      visibility: visible;
+      transition: all .3s ease .3s;
+      @include activate-description-pseudo;
+    }
+  }
+}

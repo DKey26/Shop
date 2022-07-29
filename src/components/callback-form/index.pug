@@ -1,0 +1,38 @@
+include ../button/index
+
+mixin callback-form()
+  +b.FORM.callback-form
+    +e.row
+      +b.input-row(class="--inside js-check-empty")
+        +e.LABEL.wrap
+          input(name="firstname", type="text", required)
+          +e.SPAN.placeholder First Name*
+
+      +b.input-row(class="--inside js-check-empty")
+        +e.LABEL.wrap
+          input(name="lastname", type="text", required)
+          +e.SPAN.placeholder Last Name*
+
+    +e.row
+      +b.input-row(class="--inside js-check-empty")
+        +e.LABEL.wrap
+          input(name="company", type="text", required)
+          +e.SPAN.placeholder Company*
+
+    +e.row
+      +b.input-row(class="--inside js-check-empty")
+        +e.LABEL.wrap
+          input(name="email", type="text", pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+[\.][[a-z]{2,4}$", size="30", required)
+          +e.SPAN.placeholder Email*
+      +b.input-row(class="--inside js-check-empty")
+        +e.LABEL.wrap
+          input(name="phone", type="text", required)
+          +e.SPAN.placeholder Phone*
+
+    +e.row
+      +b.input-row(class="--inside js-check-empty")
+        +e.LABEL.wrap
+          textarea(name="message", type="text", required)
+          +e.SPAN.placeholder Message*
+    +e.row
+      +button('button', 'get in touch')

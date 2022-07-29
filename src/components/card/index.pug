@@ -1,0 +1,35 @@
+mixin card-wrapper()
+  +b.card-wrapper
+    if block
+      block
+
+mixin card(item)
+  -
+    var edgedPrices = getEdgePrices(item.type);
+
+    function getFormattedPrices() {
+      if(!edgedPrices || !edgedPrices.min) {
+        return ''
+      }
+
+      if(edgedPrices.min == edgedPrices.max) {
+        return `${formatPrice(edgedPrices.min)}`
+      }
+
+      return `${formatPrice(edgedPrices.min)} - ${formatPrice(edgedPrices.max)}`
+    }
+
+  +b.A.card(href=`/products#${item.id}`)
+    +e.view
+      img(src="/images/"+item.image, alt=item.title)
+      +e.SPAN.hover-description Select option
+    +e.description
+      +e.P.title #{item.title}
+        if item.isDescripted
+          +e.SPAN.star *
+      +e.P.subtitle #{getFormattedPrices()}
+
+  if item.isDescripted
+    +e.P.mobile-description.on-mobile
+      +e.SPAN.star *
+      | This product will be embroidered. Pricing may vary so please <a href="/contact-us">contact us</a> directly regarding these orders!

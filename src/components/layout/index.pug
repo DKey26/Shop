@@ -1,0 +1,24 @@
+include ../../_base/pug/bemto-master/bemto
+- set_bemto_settings({ modifier: "--" })
+
+include ../wear-info/index.pug
+include ../wear-info/methods.pug
+
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    include ../head/index
+    block head
+
+  +b.BODY(class=pageClass)
+    //- include ../ui/loader/loader
+    include ../header/index
+
+    +b.MAIN.content
+      block content
+
+    include ../footer/index
+    include ../windows/index
+    block underbody

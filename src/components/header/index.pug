@@ -1,0 +1,51 @@
+include ../sprite/index.pug
+-
+  function getActiveClass(page) {
+    if(page === pageName) {
+      return 'active';
+    }
+
+    return '';
+  }
++b.HEADER.header
+  .container
+    +e.A.logo(href="/")
+      //- img(src="/images/logo.svg", alt="Merch connect")
+      +sprite('logo')
+      +e.P.copy-text merch connect
+
+    +b.NAV.main-navigation
+      +e.UL.list
+        +e.LI.item(class=getActiveClass('index'))
+          a(href="/") Home
+        +e.LI.item(class=getActiveClass('products'))
+          a(href="/products") Products
+        +e.LI.item(class=getActiveClass('print-on-demand'))
+          a(href="/print-on-demand") POD
+        +e.LI.item(class=getActiveClass('free-shirt'))
+          a(href="/free-shirt") Free Shirt
+        +e.LI.item(class=getActiveClass('about-us'))
+          a(href="/about-us") About us
+        +e.LI.item(class=getActiveClass('contact-us'))
+          a(href="/contact-us") Contact us
+        +e.LI.item.on-mobile(class=getActiveClass('faq'))
+          a(href="/faq") FAQ
+
+      +e.UL.socials.on-mobile
+        +e.LI.item
+          +e.A.link(href="https://www.facebook.com/MerchConnect-Studios-108419848318646")
+            +sprite('facebook-blue')
+        //- +e.LI.item
+          +e.A.link(href="#")
+            +sprite('twitter-blue')
+        +e.LI.item
+          +e.A.link(href="https://www.instagram.com/merchconnectstudios/")
+            +sprite('instagram-blue')
+
+    +e.information
+      +e.A.tel(href="tel:3365016722")
+        +sprite('phone')
+        | 336-501-6722
+
+    +e.SPAN.mobile-menu-button
+      span

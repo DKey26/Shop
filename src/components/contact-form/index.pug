@@ -1,0 +1,24 @@
+include ../title/index
+include ../button/index
+
+mixin contact-form()
+  +b.SECTION.contact-form
+    .container
+      +title('h4', 'Want to be the first to hear the deals you won’t get anywhere else for custom prints?', 'Join our marketing list today for actual fire deals on shirts in stock + custom printing promo deals.', 'centered')
+      +e.FORM.wrap
+        +b.input-row(class="--inside js-check-empty")
+          +e.LABEL.wrap
+            input(name="firstname", type="text", required)
+            +e.SPAN.placeholder First Name*
+
+        +b.input-row(class="--inside js-check-empty")
+          +e.LABEL.wrap
+            input(name="lastname", type="text", required)
+            +e.SPAN.placeholder Last Name*
+
+        +b.input-row(class="--inside js-check-empty")
+          +e.LABEL.wrap
+            input(name="email", type="text", pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+[\.][[a-z]{2,4}$", size="30", required)
+            +e.SPAN.placeholder Email*
+
+        +button('button', 'JOIN THE TEAM')

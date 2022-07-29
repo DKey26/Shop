@@ -1,0 +1,54 @@
+extends ../components/layout/index
+include ../components/sprite/index
+include ../components/callback-form/index
+
+block variables
+  - var pageClass = '';
+  - var pageTitle = "Merch Connect - Contact Us";
+  - var pageDescription = ""
+  - var pageName = "contact-us"
+
+block head
+  script(src="https://maps.googleapis.com/maps/api/js?callback=initMap&sensor=false" async onload="window.initMap()")
+
+block content
+  +b.SECTION.preview
+    +e.image-wrap
+      img(src="/images/bg-phone.png", alt="Phone")
+
+    .container
+      +e.wrap
+        +e.col
+          +b.title-block
+            +e.H1.title Get in touch
+            +e.P.subtitle
+              span Have questions? A crazy idea you want to bring to life?
+              span Send us a note, or give us a call at 336-501-6722 or email us at orders@merchconnect.com and let our team help you
+          +e.UL.socials.on-desktop
+            +e.LI.item
+              +e.A.link(href="https://www.facebook.com/MerchConnect-Studios-108419848318646")
+                +sprite('facebook-blue')
+            //- +e.LI.item
+              +e.A.link(href="#")
+                +sprite('twitter-blue')
+            +e.LI.item
+              +e.A.link(href="https://www.instagram.com/merchconnectstudios/")
+                +sprite('instagram-blue')
+
+          +e.P.suggestion.on-desktop Check out our location on a map.
+
+        +e.col
+          +callback-form()
+          +e.UL.socials.on-mobile
+            +e.LI.item
+              +e.A.link(href="#")
+                +sprite('facebook-blue')
+            +e.LI.item
+              +e.A.link(href="#")
+                +sprite('twitter-blue')
+            +e.LI.item
+              +e.A.link(href="#")
+                +sprite('instagram-blue')
+          +e.P.suggestion.on-mobile Check out our location on a map.
+  //- +b.google-map
+  iframe.google-maps(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.380538366477!2d-79.82449538444168!3d36.059821316722406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8853196458a9131d%3A0x8e020c9d33e93c43!2zMTcyNCBIb2xicm9vayBTdCwgR3JlZW5zYm9ybywgTkMgMjc0MDMsINCh0KjQkA!5e0!3m2!1sru!2sru!4v1645515811076!5m2!1sru!2sru" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy")

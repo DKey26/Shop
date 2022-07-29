@@ -1,0 +1,29 @@
+include ../button/index
+
+mixin free-shirt-form()
+  +b.FORM.free-shirt-form
+    +e.row
+      +b.input-row(class="--inside js-check-empty")
+        +e.LABEL.wrap
+          input(name="name", type="text", required)
+          +e.SPAN.placeholder Name*
+
+    +e.row
+      +b.input-row(class="--inside js-check-empty")
+        +e.LABEL.wrap
+          input(name="instagram", type="text", required)
+          +e.SPAN.placeholder Instagram Handle*
+
+    +e.row
+      +b.input-row(class="--inside js-check-empty")
+        +e.LABEL.wrap
+          input(name="email", type="text", pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+[\.][[a-z]{2,4}$", size="30", required)
+          +e.SPAN.placeholder Email Address*
+
+    +e.row
+      +b.input-row(class="--inside js-check-empty")
+        +e.LABEL.wrap
+          input(name="address", type="text", required)
+          +e.SPAN.placeholder Shipping Address*
+    +e.row
+      +button('button', 'Send')

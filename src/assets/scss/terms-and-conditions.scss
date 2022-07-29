@@ -1,0 +1,175 @@
+@import "~/_base/scss/main";
+
+@import "./components.scss";
+
+@import "../../components/circle-preview";
+
+main {
+  overflow: visible;
+}
+
+.content {
+  .container {
+
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__text {
+    display: flex;
+    flex-shrink: 1;
+    // max-height: 100vh;
+  }
+  
+  .typography {
+    padding-right: 10px;
+    ol {
+      margin-left: 80px;
+      li {
+        list-style: unset;
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    position: sticky;
+    top: 100px;
+    padding-left: 16px;
+  }
+
+
+  &__header {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 64px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__sub-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: $color-mine-shaft !important;
+    margin-left: 10px;
+  }
+
+  .scroll-nav {
+    &__item {
+      margin-bottom: 28px;
+      a {
+        line-height: 1.3;
+        height: initial;
+        font-size: 16px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &--active {
+        a {
+          color: $color-astral;
+          font-weight: 700;
+          &:before {
+            background: $color-astral;
+          }
+        }
+      }
+    }
+  }
+
+  &__nav-list {
+    width: 314px;
+    nav {
+      width: 100%;
+    }
+
+    a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 56px;
+      color: $color-mine-shaft;
+      padding-left: 8px;
+      font-weight: 500;
+      
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: transparent;
+        transition: background .3s ease;
+      }
+
+      &.active {
+        &:before {
+          background: $color-astral;
+        }
+      }
+    }
+  }
+
+  &__scroll-bar {
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 1;
+    position: relative;
+    width: 4px;
+    background: $color-wild-sand;
+
+    span {
+      content: "";
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 175px;
+      background: #E0E0E0;
+    }
+  }
+
+  @media only screen and (max-width: 1367px) {
+    &__nav-list {
+      width: 230px;
+    }
+
+    .scroll-nav {
+      &__item {
+        a {
+          
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    &__navigation {
+      display: none;
+    }
+
+    
+
+    &__scroll-bar {
+      display: none;
+    }
+
+    .typography {
+      padding-right: 0;
+      ol {
+        margin-left: 30px;
+      }
+    }
+  }
+}

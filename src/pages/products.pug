@@ -1,0 +1,108 @@
+extends ../components/layout/index
+include ../components/button/index
+include ../components/card/index
+include ../components/title/index
+include ../components/sprite/index
+include ../components/description-item/index
+include ../components/category-item/index
+include ../components/contact-form/index
+
+block variables
+  - var pageClass = '';
+  - var pageTitle = "Merch Connect - Products";
+  - var pageDescription = ""
+  - var pageName = "products"
+
+block content
+  +b.SECTION.preview
+    .container
+      +e.images
+        img(src="/images/t-shirt-print.svg", alt="T-shirt print example")
+        img(src="/images/long-sleeves-print.svg", alt="Long sleeves print example")
+        img(src="/images/hoodie-print.svg", alt="Hoodie print example")
+      +b.title-block
+        +e.H1.title Products
+          span.decoration
+            +sprite('blob-bordered')
+            +sprite('blob-bordered')
+            +sprite('blob-bordered')
+
+        +e.P.subtitle Our direct partnership with the most biggest blank wholesalers allows us to get you the best pricing on the best quality
+
+      p We have access to many skus we don’t showcase on here. Below are just what we’ve seen to be the best sellers. if there are specific SKUs you don’t see on here you wish to use, just simply 
+        a(href="/contact-us") contact us
+        | !
+
+  +b.NAV.product-navigation
+    .container
+      +e.wrap
+        each item in WEAR_TYPES_INFO
+          +e.A.item(href=`#${item.id}`)
+            +e.icon
+              +sprite(item.icon)
+            +e.SPAN.title= item.title
+
+  -
+    let brands = getAllBrands()
+
+  +b.SECTION.filter
+    .container
+      +e.wrap
+        +e.col
+          +e.brands
+            span.title-text Brand:
+            select
+              option(value="All brands", selected) All brands
+
+              each brand in brands
+                option(value=brand)= brand
+
+        +e.col.on-mobile
+          .nice-select.select-scroll
+            span.current T-shirt
+            .nice-select-dropdown
+              ul.list
+                each item in WEAR_TYPES_INFO
+                  li.option.null
+                    a(href=`#${item.id}`)= item.title
+
+        +e.col
+          +e.SPAN.count #{getProductCount()} items
+
+  +b.SECTION.products
+    .container
+      each wearTypeItems, wearType in WEAR_INFO
+        if wearTypeItems.length
+          +category-item(WEAR_TYPES_INFO[wearType])
+            +description-item-wrapper()
+              each item in wearTypeItems
+                +description-item(item)
+
+  +b.SECTION.showcase-slider.default-swiper
+    .container
+      +e.H4.title Recently printed
+
+    .swiper-container.container
+      +e.wrap.swiper-wrapper
+        +e.item.swiper-slide
+          +e.image-wrapper
+            img(src="/images/showcase-1.png", alt="Showcase T-shirt with printed bears")
+
+        +e.item.swiper-slide
+          +e.image-wrapper
+            img(src="/images/showcase-2.png", alt="Showcase hoodie with printed 'COLDEST' logo")
+
+        +e.item.swiper-slide
+          +e.image-wrapper
+            img(src="/images/showcase-3.png", alt="Showcase T-shirt with printed 'BT21' logo")
+
+        +e.item.swiper-slide
+          +e.image-wrapper
+            img(src="/images/showcase-4.png", alt="Showcase hoodie with printed 'FTX' logo")
+      .swiper-pagination
+      .swiper-button-prev
+        +sprite('tiny-arrow')
+      .swiper-button-next
+        +sprite('tiny-arrow')
+
+  +contact-form()

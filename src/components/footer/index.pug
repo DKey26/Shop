@@ -1,0 +1,98 @@
+include ../sprite/index.pug
+
++b.FOOTER.footer
+  +e.top-line
+  .container
+    +e.main-wrap
+      +b.headered-list
+        +e.title Products
+        +e.UL.list
+          +e.LI.item
+            a(href="/products#t-shirt") T-shirt
+          +e.LI.item
+            a(href="/products#v-neck") Vnecks
+          +e.LI.item
+            a(href="/products#long-sleeves") Long sleeves
+          +e.LI.item
+            a(href="/products#crew-neck") Crew neck
+          +e.LI.item
+            a(href="/products#hoodie") Hoodies
+          +e.LI.item
+            a(href="/products#polo") Polo
+          +e.LI.item
+            a(href="/products#hats") Hats
+          +e.LI.item
+            a(href="/products#stickers") Stickers
+
+      +b.headered-list
+        +e.title Navigate
+        +e.UL.list
+          +e.LI.item
+            a(href="/") Home
+          +e.LI.item
+            a(href="/products") Products
+          +e.LI.item
+            a(href="/about-us") About Us
+          +e.LI.item
+            a(href="/contact-us") Contacts Us
+
+      +b.headered-list
+        +e.title Resources
+        +e.UL.list
+          +e.LI.item
+            a(href="/faq") FAQ
+          +e.LI.item
+            a(href="/terms-and-conditions") Terms & Coditions
+          +e.LI.item
+            a(href="/about-us") About Us
+          +e.LI.item
+            a(href="/privacy-policy") Privacy Policy
+
+      +b.headered-list
+        +e.title Address
+        +e.UL.list
+          +e.LI.item Merchconnect Studios.
+          |  1724 Holbrook St Greensboro,
+          |  NC 27403
+
+          +e.LI.item
+            a(href="tel:3365016722") 336-501-6722
+
+          +e.LI.item
+            a(href="mailto:Orders@merchconnect.com") Orders@merchconnect.com
+
+          +e.LI.item
+            a(href="mailto:Orders@merchconnect.com") | Mon - Fri, 9:00 am - 6:00 pm
+
+      +b.square-block
+        iframe.google-maps(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.380538366477!2d-79.82449538444168!3d36.059821316722406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8853196458a9131d%3A0x8e020c9d33e93c43!2zMTcyNCBIb2xicm9vayBTdCwgR3JlZW5zYm9ybywgTkMgMjc0MDMsINCh0KjQkA!5e0!3m2!1sru!2sru!4v1645515811076!5m2!1sru!2sru" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy")
+        //- +e.title Contact us
+        //- +e.UL.list
+        //-   +e.LI.item
+        //-     +sprite('call')
+        //-     a(href="tel:3365016722") 336-501-6722
+
+        //-   +e.LI.item
+        //-     +sprite('letter')
+        //-     a(href="mailto:Orders@merchconnect.com") Orders@merchconnect.com
+
+        //-   +e.LI.item
+        //-     +sprite('clock')
+        //-     | Mon - Fri, 9:00 am - 6:00 pm
+
+    +e.bottom-wrap
+      +e.logo
+        +sprite('logo-white')
+      +e.copyright © 2022 Merchconnect Studios.
+        span  | 
+        |  All Rights Reserved
+      +e.UL.socials
+        +e.LI.item
+          a(href="https://www.facebook.com/MerchConnect-Studios-108419848318646")
+            +sprite('facebook')
+        //- +e.LI.item
+          a(href="https://www.twitter.com")
+            +sprite('twitter')
+        +e.LI.item
+          a(href="https://www.instagram.com/merchconnectstudios/")
+            +sprite('instagram')

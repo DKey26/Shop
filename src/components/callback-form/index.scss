@@ -1,0 +1,21 @@
+.callback-form {
+  &__row {
+    display: flex;
+    width: calc(100% + 14px);
+    margin: 0 -7px;
+  }
+
+  .button {
+    margin: 0 7px;
+    width: 100%;
+  }
+
+  .input-row {
+    margin: 0 7px;
+    margin-bottom: 14px;
+
+    input, textarea {
+      background: $color-white;
+    }
+  }
+}

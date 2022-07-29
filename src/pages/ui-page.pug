@@ -1,0 +1,40 @@
+extends ../components/layout/index
+include ../components/button/index
+include ../components/card/index
+include ../components/title/index
+include ../components/description-item/index
+include ../components/category-item/index
+include ../components/accordion/index
+
+block variables
+  - var pageClass = '';
+  - var pageTitle = "Merch Connect - Products";
+  - var pageDescription = ""
+  - var pageName = "products"
+
+block content
+  .container
+    a(href="/") Main
+    +button('button', 'default button')
+    +button('a', 'default link', 'default')(href="/about-us")
+    +button('button', 'default button disabled', 'default', true)
+    +button('button', 'default button loading', 'loading')
+    +button('button', 'default button loading disabled', 'loading', true)
+    +button('button', 'bordered button', 'bordered')
+    +button('button', 'bordered button disabled', 'bordered', true)
+    +button('button', 'bordered button loading', ['bordered', 'loading'])
+    +button('button', 'bordered button loading disabled', ['bordered', 'loading'], true)   ++
+
+    each wearTypeItems, wearType in WEAR_INFO
+      +category-item(WEAR_TYPES_INFO[wearType])
+        +description-item-wrapper()
+          each item in wearTypeItems
+            +description-item(item)
+
+    +card-wrapper()
+      each item in WEAR_TYPES_INFO
+        +card(item)
+
+    +title('h2', 'Some text', 'Some subtitle')
+
+    +accordion(questions)

@@ -1,0 +1,585 @@
+-
+  var WEAR_TYPES = {
+    T_SHIRT: 'T_SHIRT',
+    V_NECK: 'V_NECK',
+    POLO: 'POLO',
+    LONG_SLEEVE: 'LONG_SLEEVE',
+    CREW_NECK: 'CREW_NECK',
+    HOODIE: 'HOODIE',
+    HATS: 'HATS',
+    STICKERS: 'STICKERS',
+  }
+
+  var WEAR_SIZES = {
+    '3XS': 0,
+    '2XS': 1,
+    'XS': 2,
+    'S': 3,
+    'M': 4,
+    'L': 5,
+    'XL': 6,
+    '2XL': 7,
+    '3XL': 8,
+    '4XL': 9,
+  }
+
+  var WEAR_TYPES_INFO = {
+    [WEAR_TYPES.T_SHIRT]: {
+      id: 't-shirt',
+      title: 'T-shirt',
+      isDescripted: false,
+      image: 't-shirt.png',
+      icon: 't-shirt-icon',
+    },
+    [WEAR_TYPES.V_NECK]: {
+      id: 'v-neck',
+      title: 'V-neck',
+      isDescripted: false,
+      image: 'v-neck.png',
+      icon: 'v-neck-icon',
+    },
+    [WEAR_TYPES.POLO]: {
+      id: 'polo',
+      title: 'Polo',
+      isDescripted: true,
+      text: `<span>Embroidery for this garment is available. Please <a href="/contact-us">contact us</a> directly to discuss your specific embroidery needs</span>`,
+      image: 'polo.png',
+      icon: 'polo-icon',
+    },
+    [WEAR_TYPES.LONG_SLEEVE]: {
+      id: 'long-sleeves',
+      title: 'Long sleeve',
+      isDescripted: false,
+      image: 'long-sleeve.png',
+      icon: 'long-sleeves-icon',
+    },
+    [WEAR_TYPES.CREW_NECK]: {
+      id: 'crew-neck',
+      title: 'Crew neck',
+      isDescripted: false,
+      image: 'crew-neck.png',
+      icon: 'crew-neck-icon',
+    },
+    [WEAR_TYPES.HOODIE]: {
+      id: 'hoodie',
+      title: 'Hoodie',
+      isDescripted: false,
+      image: 'hoodie.png',
+      icon: 'hoodie-icon',
+    },
+    [WEAR_TYPES.HATS]: {
+      id: 'hats',
+      title: 'Hats',
+      isDescripted: true,
+      text: `<span>Embroidery for this garment is available. Please <a href="/contact-us">contact us</a> directly to discuss your specific embroidery needs</span>`,
+      image: 'hat.png',
+      icon: 'hat-icon',
+    },
+    [WEAR_TYPES.STICKERS]: {
+      id: 'stickers',
+      title: 'Stickers',
+      isDescripted: false,
+      image: 'sticker.png',
+      icon: 'sticker-icon',
+    },
+  }
+
+  Object.keys(WEAR_TYPES_INFO).forEach((key) => {
+    WEAR_TYPES_INFO[key].type = key;
+  })
+
+  var WEAR_INFO = {
+    [WEAR_TYPES.T_SHIRT]: [
+      {
+        brand: 'Gildan',
+        title: 'Adult T-Shirt',
+        subtitle: 'Gildan 2000',
+        material:
+          '100% of our fabric cutting scraps are recycled into fiber and used in new products. Ash is 99% cotton, 1% polyester. Sport Grey is 90% cotton, 10% polyester.',
+        description:
+          '7/8" rib collar. Classic fit tubular body. Classic heavyweight fabric. Double-needle sleeve and bottom hems. Taped neck and shoulders',
+        prices: {
+          [WEAR_SIZES['S']]: 8.5,
+          [WEAR_SIZES['M']]: 8.5,
+          [WEAR_SIZES['L']]: 8.5,
+          [WEAR_SIZES['XL']]: 8.5,
+          [WEAR_SIZES['2XL']]: 9.1,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 6.0,
+        colors: 7,
+      },
+      {
+        brand: 'Gildan',
+        title: 'Adult T-Shirt',
+        subtitle: 'Gildan 5000',
+        material:
+          '100% cotton. Heather colors, Graphite Heather, Safety colors,Tweed, Blackberry, Lilac, Midnight, Neon colors & Sunset: 50/50 cotton/polyester. Antique colors & Sport Grey : 90/10 cotton/polyester. Ash Grey: 99/1 cotton/polyester',
+        description:
+          '7/8" rib collar. Classic fit tubular body. Classic midweight fabric. Double-needle sleeve and bottom hems. Grey pearlized tear away label. Taped neck and shoulders',
+        prices: {
+          [WEAR_SIZES['S']]: 8.3,
+          [WEAR_SIZES['M']]: 8.3,
+          [WEAR_SIZES['L']]: 8.3,
+          [WEAR_SIZES['XL']]: 8.3,
+          [WEAR_SIZES['2XL']]: 8.9,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 5.3,
+        colors: 7,
+      },
+      {
+        brand: 'Bella Canvas',
+        title: 'UNISEX JERSEY SHORT SLEEVE TEE',
+        subtitle: 'Bella Canvas 3001',
+        material:
+          '100% Airlume combed and ring-spun cotton, 32 single 4.2 oz. (Ash - 99% Airlume combed and ring-spun cotton, 1% poly)',
+        description:
+          'Sideseamed. Retail fit. Unisex sizing. Shoulder taping. Standard length, the fabric easily gives into movenets. A classic everyday option',
+        prices: {
+          [WEAR_SIZES['S']]: 10.9,
+          [WEAR_SIZES['M']]: 10.9,
+          [WEAR_SIZES['L']]: 10.9,
+          [WEAR_SIZES['XL']]: 10.9,
+          [WEAR_SIZES['2XL']]: 12.2,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 4.2,
+        colors: 7,
+      },
+      {
+        brand: 'Cotton Heritage',
+        title: 'UNISEX SHORT SLEEVE T-SHIRT',
+        subtitle: 'Cotton Heritage MC1040',
+        material:
+          '100% combed ring-spun cotton, soft-washed. Heathers are 60/40 cotton/polyester, excluding Athletic Heather which is 85/15 cotton/ viscose and Black Graphite Heather which is 80/20 cotton/polyester.',
+        description:
+          'This T-shirt is a premium product with a classic fit. Lightweight and tight knit--jersey. Side seamed with a reinforced shoulder seam, and an enzyme-wash finish.',
+        prices: {
+          [WEAR_SIZES['S']]: 10.29,
+          [WEAR_SIZES['M']]: 10.29,
+          [WEAR_SIZES['L']]: 10.29,
+          [WEAR_SIZES['XL']]: 10.29,
+          [WEAR_SIZES['2XL']]: 11.07,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 4.3,
+        colors: 7,
+      },
+      {
+        brand: 'Next Level',
+        title: 'Cotton Short Sleeve Crew',
+        subtitle: 'Next Level 3600',
+        material: '100% Combed Ring-Spun Cotton Fine Jersey. Heather Gray 90% Cotton/10% Poly.',
+        description:
+          'Soft, form-fitting, and pre-shrunk to maintain its shape after washing. Plus, the tear-away tag allows you to add your own custom branding.',
+        prices: {
+          [WEAR_SIZES['S']]: 11.82,
+          [WEAR_SIZES['M']]: 11.82,
+          [WEAR_SIZES['L']]: 11.82,
+          [WEAR_SIZES['XL']]: 11.82,
+          [WEAR_SIZES['2XL']]: 12.9,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 4.3,
+        colors: 7,
+      },
+    ],
+
+    [WEAR_TYPES.V_NECK]: [
+      {
+        brand: 'Gildan',
+        title: 'Adult V-Neck T-Shirt',
+        subtitle: 'Gildan 64V00',
+        material: '100% cotton. Heather color (Dark Heather): 35/65 cotton/polyester. Sport Grey: 90/10 cotton/polyester',
+        description:
+          '5/8" rib collar. Double-needle sleeve and bottom hems. High stitch density for smoother printing surface. Modern classic fit side seamed body. Soft ring spun fabric.  Taped neck and shoulders',
+        prices: {
+          [WEAR_SIZES['S']]: 9.5,
+          [WEAR_SIZES['M']]: 9.5,
+          [WEAR_SIZES['L']]: 9.5,
+          [WEAR_SIZES['XL']]: 9.5,
+          [WEAR_SIZES['2XL']]: 10.26,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 4.5,
+        colors: 7,
+      },
+      {
+        brand: 'Next Level',
+        title: 'Cotton Short Sleeve V',
+        subtitle: 'Next Level 3200',
+        material: '100% combed ring-spun cotton. Heather Grey is 90% cotton/10% polyester.',
+        description:
+          'The Next Level 3200 is the cotton v-neck within the Favorite Collection and is ideal for comfort. Set-in 1x1 baby rib collar. Side seams. Fabric laundered.',
+        prices: {
+          [WEAR_SIZES['S']]: 12.85,
+          [WEAR_SIZES['M']]: 12.85,
+          [WEAR_SIZES['L']]: 12.85,
+          [WEAR_SIZES['XL']]: 12.85,
+          [WEAR_SIZES['2XL']]: 13.93,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 4.3,
+        colors: 7,
+      },
+      {
+        brand: 'Bella Canvas',
+        title: 'UNISEX JERSEY SHORT SLEEVE V-NECK TEE',
+        subtitle: 'Bella Canvas 3005',
+        material:
+          '100% Airlume combed and ring-spun cotton. Ash - 99% combed and ring-spun cotton, 1% poly; Ath. Heather - 90% combed and ring-spun cotton 10% poly; All other heather/blend colors - 52% combed and ring-spun cotton, 48% poly',
+        description:
+          'The classic v-neck cut of this shirt combined with a bold or minimalistic design will be the perfect piece for workwear and casual outfits.',
+        prices: {
+          [WEAR_SIZES['S']]: 12.36,
+          [WEAR_SIZES['M']]: 12.36,
+          [WEAR_SIZES['L']]: 12.36,
+          [WEAR_SIZES['XL']]: 12.36,
+          [WEAR_SIZES['2XL']]: 13.53,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 4.2,
+        colors: 7,
+      },
+    ],
+
+    [WEAR_TYPES.POLO]: [
+      {
+        brand: 'Gildan',
+        title: 'Adult Pique Sport Shirt',
+        subtitle: 'Gildan 3800',
+        material:
+          '100% ring-spun cotton pique. Sport Grey is 90% ring-spun cotton pique, 10% polyester. Three woodtone buttons.',
+        description:
+          'Classic fit tubular body. Contoured welt collar and cuffs. Double-needle bottom hem. Heavyweight soft ring spun pique fabric',
+        prices: {
+          [WEAR_SIZES['S']]: 13.97,
+          [WEAR_SIZES['M']]: 13.97,
+          [WEAR_SIZES['L']]: 13.97,
+          [WEAR_SIZES['XL']]: 13.97,
+          [WEAR_SIZES['2XL']]: 15.23,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 6.03,
+        colors: 7,
+      },
+    ],
+
+    [WEAR_TYPES.LONG_SLEEVE]: [
+      {
+        brand: 'Gildan',
+        title: 'Adult Long Sleeve T-Shirt',
+        subtitle: 'Gildan 2400',
+        material:
+          '100% cotton. Ash Grey: 99/1 cotton/polyester. Dark Heather & Safety colors: 50/50 cotton/polyester. Sport Grey: 90/10 cotton/polyester',
+        description:
+          '7/8" rib collar. Classic fit tubular body. Classic heavyweight fabric. Double-needle bottom hem. Rib cuffs. Taped neck and shoulders',
+        prices: {
+          [WEAR_SIZES['S']]: 11.67,
+          [WEAR_SIZES['M']]: 11.67,
+          [WEAR_SIZES['L']]: 11.67,
+          [WEAR_SIZES['XL']]: 11.67,
+          [WEAR_SIZES['2XL']]: 11.85,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 6.0,
+        colors: 7,
+      },
+      {
+        brand: 'Next Level',
+        title: 'Cotton Long Sleeve Crew',
+        subtitle: 'Next Level 3601',
+        material: '100% combed ringspun cotton. Heather Gray 90% cotton/10% polyester',
+        description:
+          'Super-soft long-sleeved crew shirt. Fabric laundered. Set-in 1x1 baby rib collar. Hemmed sleeves. Side seams.',
+        prices: {
+          [WEAR_SIZES['S']]: 15.28,
+          [WEAR_SIZES['M']]: 15.28,
+          [WEAR_SIZES['L']]: 15.28,
+          [WEAR_SIZES['XL']]: 15.28,
+          [WEAR_SIZES['2XL']]: 16.35,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 4.3,
+        colors: 7,
+      },
+      {
+        brand: 'Bella Canvas',
+        title: 'UNISEX JERSEY LONG SLEEVE TEE',
+        subtitle: 'Bella Canvas 3501',
+        material:
+          '100% Airlume combed and ring-spun cotton. Ash - 99% Airlume combed and ring-spun cotton, 1% poly. Ath. Heather - 90% Airlume combed and ring-spun cotton 10% poly.',
+        description: 'Regular fit. Side-seamed construction. Crew neck. Coverstitched collar. 2″ (5 cm) ribbed cuffs.',
+        prices: {
+          [WEAR_SIZES['S']]: 14.44,
+          [WEAR_SIZES['M']]: 14.44,
+          [WEAR_SIZES['L']]: 14.44,
+          [WEAR_SIZES['XL']]: 14.44,
+          [WEAR_SIZES['2XL']]: 16.19,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 4.2,
+        colors: 7,
+      },
+      {
+        brand: 'Cotton Heritage',
+        title: "MEN'S LONG SLEEVE T-SHIRT",
+        subtitle: 'Cotton Heritage MC1144',
+        material:
+          'Soft-washed, 100% combed ring-spun cotton, except Athletic Heather (85%/15% cotton/viscose), and all other Heathers (60%/40% cotton/polyester).',
+        description: 'Ultra soft hand, side-seamed, open hemmed cuff, tightly knit. Superior printability.',
+        prices: {
+          [WEAR_SIZES['S']]: 12.56,
+          [WEAR_SIZES['M']]: 12.56,
+          [WEAR_SIZES['L']]: 12.56,
+          [WEAR_SIZES['XL']]: 12.56,
+          [WEAR_SIZES['2XL']]: 13.61,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 4.3,
+        colors: 7,
+      },
+    ],
+
+    [WEAR_TYPES.CREW_NECK]: [
+      {
+        brand: 'Gildan',
+        title: 'Adult Crewneck Sweatshirt',
+        subtitle: 'Gildan 18000',
+        material: '50% cotton, 50% polyester. Heather Sport colors: 60/40 polyester/cotton.',
+        description:
+          'Classic fit. Air jet yarn for softer feel and reduced pilling. Double-needle stitching at shoulders, armholes, neck, waistband and cuffs. 1x1 rib with spandex for enhanced stretch and recovery',
+        prices: {
+          [WEAR_SIZES['S']]: 16.87,
+          [WEAR_SIZES['M']]: 16.87,
+          [WEAR_SIZES['L']]: 16.87,
+          [WEAR_SIZES['XL']]: 16.87,
+          [WEAR_SIZES['2XL']]: 18.37,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 8.0,
+        colors: 7,
+      },
+      {
+        brand: 'Next Level',
+        title: 'The French Terry Raglan Crew',
+        subtitle: 'Next Level 9000',
+        material: '60% combed ringspun cotton, 40% polyester. French Terry fleece.',
+        description:
+          '1x1 ribbed collar, cuffs and waistband; Self 3/8 back neck binding; Raglan sleeves; Side seam; Regular fit; Comfortable crew with French Terry body.',
+        prices: {
+          [WEAR_SIZES['S']]: 24.01,
+          [WEAR_SIZES['M']]: 24.01,
+          [WEAR_SIZES['L']]: 24.01,
+          [WEAR_SIZES['XL']]: 24.01,
+          [WEAR_SIZES['2XL']]: 26.68,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 5.03,
+        colors: 7,
+      },
+    ],
+
+    [WEAR_TYPES.HOODIE]: [
+      {
+        brand: 'Gildan',
+        title: 'Adult Hooded Sweatshirt',
+        subtitle: 'Gildan 18500',
+        material: '50% pre-shrunk cotton, 50% polyester. Heather Sport colors: 40/60 cotton/polyester.',
+        description:
+          'Air-jet spun yarn with a soft feel and reduced pilling. Double-lined hood with matching drawcord. Quarter-turned body to avoid crease down the middle. 1 × 1 athletic rib-knit cuffs and waistband with spandex. Front pouch pocket. Double-needle stitched collar, shoulders, armholes, cuffs, and hem.',
+        prices: {
+          [WEAR_SIZES['S']]: 22.15,
+          [WEAR_SIZES['M']]: 22.15,
+          [WEAR_SIZES['L']]: 22.15,
+          [WEAR_SIZES['XL']]: 22.15,
+          [WEAR_SIZES['2XL']]: 23.17,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 8.0,
+        colors: 7,
+      },
+      {
+        brand: 'Bella Canvas',
+        title: 'UNISEX SPONGE FLEECE PULLOVER HOODIE',
+        subtitle: 'Bella Canvas 3719',
+        material:
+          '52% Airlume combed and ring-spun cotton, 48% polyester fleece, 32 single 8.0 oz. (Ath. Heather - 90% combed and ring-spun cotton, 10% poly).',
+        description:
+          'Side-seamed. Retail fit. Unisex sizing. White cord drawstring. Kangaroo pockets. Ribbed cuffs and waistband.',
+        prices: {
+          [WEAR_SIZES['S']]: 24.82,
+          [WEAR_SIZES['M']]: 24.82,
+          [WEAR_SIZES['L']]: 24.82,
+          [WEAR_SIZES['XL']]: 24.82,
+          [WEAR_SIZES['2XL']]: 28.92,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 7.0,
+        colors: 7,
+      },
+      {
+        brand: 'Next Level',
+        title: 'Unisex Santa Cruz Pullover Hoodie',
+        subtitle: 'Next Level 9303',
+        material:
+          '80% cotton/20% polyester fleece; 100% cotton face ; Front pocket ; Sueded jersey lined hood with drawcord',
+        description:
+          'Contrast 3/8 back neck binding; 1x1 ribbed cuffs and waistband; Side seam; Regular fit; Classic sweatshirt construction, comfortable relaxed fit with keep-cozy weight; Cotton heavy face for ease of printability and breathability;',
+        prices: {
+          [WEAR_SIZES['S']]: 30.04,
+          [WEAR_SIZES['M']]: 30.04,
+          [WEAR_SIZES['L']]: 30.04,
+          [WEAR_SIZES['XL']]: 30.04,
+          [WEAR_SIZES['2XL']]: 32.08,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 7.4,
+        colors: 7,
+      },
+      {
+        brand: 'Cotton Heritage',
+        title: 'UNISEX PREMIUM PULLOVER HOODIE',
+        subtitle: 'Cotton Heritage M2580',
+        material:
+          '3-end fleece, soft-washed. 100% cotton face. 65% cotton/35% polyester, except Oatmeal Heather (55% cotton/45% polyester), and all other Heathers (60% cotton/40% polyester).',
+        description:
+          'Unisex, ultra soft hand, side-seamed, tightly knit, 3-end cotton faced, 3-panel hood, flat draw cords, self fabric 1/2 moon patch on neck for custom branding, 2 needle cover stitching at cuffs and waistband, single needle edge stitch at collar, silver grommets.',
+        prices: {
+          [WEAR_SIZES['S']]: 23.27,
+          [WEAR_SIZES['M']]: 23.27,
+          [WEAR_SIZES['L']]: 23.27,
+          [WEAR_SIZES['XL']]: 23.27,
+          [WEAR_SIZES['2XL']]: 24.82,
+        },
+        sizes: [WEAR_SIZES['S'], WEAR_SIZES['M'], WEAR_SIZES['L'], WEAR_SIZES['XL'], WEAR_SIZES['2XL']],
+        weight: 8.5,
+        colors: 7,
+      },
+    ],
+
+    [WEAR_TYPES.HATS]: [
+      {
+        brand: 'OTTO Cap',
+        title: 'Polyester Foam Front 5-Panel Trucker Cap',
+        subtitle: 'OTTO Cap 32-467',
+        material: '100% Polyester Front. 100% Nylon Mesh Back',
+        description:
+          'The Professional Look 5-panel cap. Seamless Foam Front Panel with Lining. Matching Mesh Color Braid. 8 Rows Stitching on Visor. Matching Fabric Undervisor. Matching Color Sweatband. Plastic Adjustable Snap',
+        prices: {
+          default: 13.0,
+        },
+        sizes: [],
+        weight: 8.0,
+        colors: 19,
+      },
+    ],
+
+    [WEAR_TYPES.STICKERS]: [
+      {
+        title: 'rectangular Stickers',
+        subtitle: '00000',
+        description: 'The Professional Look 5-panel cap. Seamless Foam Front Panel with Lining. Matching Mesh Color Braid. 8 Rows Stitching on Visor. Matching Fabric Undervisor. Matching Color Sweatband. Plastic Adjustable Snap',
+        prices: {
+          default: 1.17,
+        },
+        sizes: ['1865 mm * 675 mm'],
+      },
+    ],
+  }
+
+  var questions = [
+    {
+      title: 'There are many other printers out there. Why choose you?',
+      texts: ['We have arguably one of the most up to date technology for DTG printing as we utilize a few Vulcan+ manufactured by industry leader Kornit. This machinery specializes in printing at higher speeds while focusing on intricate detailed designs with high quality prints.']
+    },
+    {
+      title: 'I’m not convinced yet, why else should we choose you?',
+      texts: [
+        'Our owner has been partnered in ecommerce businesses for 9 years giving us full insight in the logistics of things while prioritizing putting the customer orders first.',
+        'Quick, yet quality focused turnarounds?',
+        'Looking for prints that aren;t just “passable”, but that you’d want sent out with pride?',
+        'Trust me, a lot of the questions or concerns you’d think about as a customer, the owner and the company has thought through already.'
+      ]
+    },
+    {
+      title: 'Almost there… give me one more reason',
+      texts: [
+        'We have direct partnerships with the biggest wholesalers for blanks such as Gildan, Bella Canvas, and Next Level to name a few that allow us to be just as competitive in pricing, if not better, than most of our competitors.',
+      ]
+    },
+    {
+      title: 'Can we opt to get some stuff screenprinted?',
+      texts: [
+        'The biggest advantage of screenprinting from a manufacturer’s standpoint comes down to bringing down the cost of prints in larger orders, which in most cases, isn’t as reflected in the price to customers as much as it could be. Aside from this, we’ve found DTG printing offers way more flexibility in the details of details, as well as the flexibility for limitless colors. We actually started off screen printing, but hated having to ask the customer to adjust based on the restrictions it brought on. With our new DTG equipment, we’ve found we are able to beat the quality of screen printed stuff, at the very least match, at comparable speeds. With that being said, although we do not offer screen-printing at this time, we’d highly recommend taking full advantage of our DTG quality custom prints offered at comparably screenprinting prices.',
+      ]
+    },
+    {
+      title: 'Can we get prints on sleeves of garments?',
+      texts: [
+        'At this moment, we cannot accommodate those requests but we guarantee we will have that capability in the very near future.',
+      ]
+    },
+    {
+      title: 'Can we get prints on sleeves of garments?',
+      texts: [
+        'At this moment, we cannot accommodate those requests but we guarantee we will have that capability in the very near future.',
+      ]
+    },
+    {
+      title: 'Where is everything printed?',
+      texts: [
+        'Everything is printed domestically in our warehouse location in  Greensboro, North Carolina. You are always welcome to visit!',
+      ]
+    },
+    {
+      title: 'I have a specific brand of blanks I’d like that I don’t see in your catalog. Can I request them?',
+      texts: [
+        'Certainly. It is actually more common than not, customers have had very specific brands they’ve wanted which we were able to obtain on their behalf for their prints.',
+      ]
+    },
+    {
+      title: 'Can i get prints on bottomwear?',
+      texts: [
+        'At this moment, we do not offer custom printing on any bottomwear but will in the near future.',
+      ]
+    },
+    {
+      title: 'There’s a specific color of a t-shirt i want that I don’t see offered on your color list, can I request this?',
+      texts: [
+        'Most certainly. Although we cannot guarantee we will be able to accommodate all requests, we do have a pretty good track record of being able to get the unique colors customers have wanted that weren’t offered on our catalog.',
+      ]
+    },
+  ]
+
+  Object.keys(WEAR_INFO).map((key) => {
+    for (let item of WEAR_INFO[key]) {
+      item.type = key;
+    }
+  })
+
+  function getAllBrands() {
+    let result = [];
+
+    Object.keys(WEAR_TYPES).forEach(type => {
+      WEAR_INFO[type].forEach(item => {
+        result.push(item.brand);
+      })
+    })
+
+    return [...new Set(result.filter(Boolean))];
+  }
+
+  function getProductCount() {
+    let result = 0;
+
+    Object.keys(WEAR_TYPES).forEach(type => {
+      result += WEAR_INFO[type].length;
+    })
+
+    return result;
+  }
+
+mixin wear-info()
+  block
